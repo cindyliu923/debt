@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_and_belongs_to_many :groups
+  has_many :debts, dependent: :destroy
+  has_many :debtors, through: :debts, source: :user
 end
