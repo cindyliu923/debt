@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180709144244) do
+ActiveRecord::Schema.define(version: 20180805125700) do
 
   create_table "debts", force: :cascade do |t|
-    t.integer "debt"
+    t.integer "debts"
     t.integer "user_id"
     t.integer "debtor_id"
     t.datetime "created_at", null: false
@@ -46,6 +46,10 @@ ActiveRecord::Schema.define(version: 20180709144244) do
     t.string "name", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "fb_uid"
+    t.string "fb_token"
+    t.string "google_uid"
+    t.string "google_token"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
